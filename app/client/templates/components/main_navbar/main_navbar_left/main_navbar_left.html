@@ -1,0 +1,11 @@
+<template name="MainNavbarLeft">
+<li class="nav-item {{isActiveRoute 'home'}}">
+  <a class="nav-link" href="{{pathFor 'home'}}"><i class="fa fa-home"></i> Home</a>
+</li>
+<li class="nav-item {{isActiveRoute 'about'}}">
+  <a class="nav-link" href="{{pathFor 'about'}}">About</a>
+</li>
+<li class="nav-item {{isActiveRoute 'contact'}}">
+  <a class="nav-link" href="{{pathFor 'contact'}}">Contact</a>
+</li>
+</template>
