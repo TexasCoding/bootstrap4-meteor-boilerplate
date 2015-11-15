@@ -1,0 +1,57 @@
+<template name="UsersProfileEdit">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="card">
+        <div class="card-header">Update Profile</div>
+        <div class="card-block">
+          {{#autoForm schema="Schema.UserProfile" doc=currentUser.profile id="usersProfileUpdate"}}
+            <div class="row">
+              <div class="col-md-6">
+                {{> afQuickField name='firstName' placeholder='First Name'}}
+              </div>
+              <div class="col-md-6">
+                {{> afQuickField name='lastName' placeholder='Last Name'}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                {{> afQuickField name='phone' placeholder='Phone'}}
+              </div>
+              <div class="col-md-4">
+                {{> afQuickField name='fax' placeholder='Fax'}}
+              </div>
+              <div class="col-md-4">
+                {{> afQuickField name='cell' placeholder='Cell Phone'}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                {{> afQuickField name='address.address1' placeholder='Address 1'}}
+              </div>
+              <div class="col-md-6">
+                {{> afQuickField name='address.address2' placeholder='Address 2'}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                {{> afQuickField name='address.city' placeholder='City'}}
+              </div>
+              <div class="col-md-4">
+                {{> afQuickField name='address.state' placeholder='State'}}
+              </div>
+              <div class="col-md-4">
+                {{> afQuickField name='address.zip' placeholder='Zip Code'}}
+              </div>
+            </div>
+            <footer>
+              <button class="btn btn-primary">
+                <i class="fa fa-plus"></i>
+                Update Profile
+              </button>
+            </footer>
+          {{/autoForm}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

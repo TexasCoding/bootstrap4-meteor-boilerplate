@@ -4,7 +4,6 @@ Router.configure({
   notFoundTemplate: 'NotFound'
 });
 
-
 Router.route('/', {
   name: 'home',
   controller: 'StaticHomeController',
@@ -32,5 +31,17 @@ Router.route('/login', {
 Router.route('/register', {
   name: 'register',
   controller: 'AuthRegisterController',
+  where: 'client'
+});
+
+Router.route('/users/:_id/profile', {
+  name: 'users.profile',
+  controller: 'UsersProfileController',
+  where: 'client'
+});
+
+Router.route('/users/:_id/profile/edit', {
+  name: 'users.profile.edit',
+  controller: 'UsersProfileEditController',
   where: 'client'
 });

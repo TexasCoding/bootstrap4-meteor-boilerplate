@@ -25,7 +25,7 @@ Schema.UserProfile = new SimpleSchema({
   },
   address: {
     type: Schema.Address,
-    optional: true
+    optional: false
   },
   phone: {
     type: String,

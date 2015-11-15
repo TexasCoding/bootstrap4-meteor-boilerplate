@@ -5,16 +5,14 @@ AuthLoginController = RouteController.extend({
   // // add the subscription to the waitlist
   // this.subscribe('item', this.params._id).wait();
 
-  subscriptions: function() {
-  },
+  subscriptions: function() {},
 
   // Subscriptions or other things we want to "wait" on. This also
   // automatically uses the loading hook. That's the only difference between
   // this option and the subscriptions option above.
   // return Meteor.subscribe('post', this.params._id);
 
-  waitOn: function () {
-  },
+  waitOn: function() {},
 
   // A data function that can be used to automatically set the data context for
   // our layout. This function can also be used by hooks and plugins. For
@@ -22,19 +20,22 @@ AuthLoginController = RouteController.extend({
   // returns a null value, and if so, renders the not found template.
   // return Posts.findOne({_id: this.params._id});
 
-  data: function () {
-  },
+  data: function() {},
 
   // You can provide any of the hook options
 
-  onRun: function () {
+  onRun: function() {
     this.next();
   },
-  onRerun: function () {
+  onRerun: function() {
     this.next();
   },
-  onBeforeAction: function () {
-    this.next();
+  onBeforeAction: function() {
+    if (Meteor.loggingIn()) {
+      this.render('Loading');
+    } else {
+      this.next();
+    }
   },
 
   // The same thing as providing a function as the second parameter. You can
@@ -45,10 +46,10 @@ AuthLoginController = RouteController.extend({
   // Example:
   //  action: 'myActionFunction'
 
-  action: function () {
+  action: function() {
     this.render('AuthLogin');
   },
-  onAfterAction: function () {
+  onAfterAction: function() {
     SEO.set({
       title: 'Login | ' + SITE_TITLE,
       meta: {
@@ -60,6 +61,5 @@ AuthLoginController = RouteController.extend({
       }
     });
   },
-  onStop: function () {
-  }
+  onStop: function() {}
 });

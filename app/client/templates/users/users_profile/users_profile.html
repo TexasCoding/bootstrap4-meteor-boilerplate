@@ -1,0 +1,19 @@
+<template name="UsersProfile">
+  <div class="row">
+    <div class="col-md-3">
+      <!-- left -->
+      <img class="profile-image" src="/img/noimage.png" alt="" />
+    </div>
+    <div class="col-md-9">
+      <!-- right -->
+      <h2>{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}</h2>
+      <address>
+        <h4>Address</h4>
+        {{currentUser.profile.address.address1}}<br>
+        {{currentUser.profile.address.address2}}<br>
+        {{currentUser.profile.address.city}}, {{currentUser.profile.address.state}} {{currentUser.profile.address.zip}}
+      </address>
+      <a class="btn btn-warning" href="{{pathFor 'users.profile.edit' _id=currentUser._id}}">Edit Profile</a>
+    </div>
+  </div>
+</template>

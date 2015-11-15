@@ -16,18 +16,18 @@ Schema.UserProfile = new SimpleSchema({
     label: 'First name',
     regEx: /^[A-Za-z _]*$/,
     max: 25,
-    optional: true
+    optional: false
   },
   lastName: {
     type: String,
     label: 'Last name',
     regEx: /^[A-Za-z _]*$/,
     max: 25,
-    optional: true
+    optional: false
   },
   address: {
     type: Schema.Address,
-    optional: true
+    optional: false
   },
   phone: {
     type: String,

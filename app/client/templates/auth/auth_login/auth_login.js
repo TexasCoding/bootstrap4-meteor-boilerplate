@@ -19,6 +19,7 @@ Template.AuthLogin.events({
       }
     });
 
+
   }
 });
 
